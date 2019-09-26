@@ -1,0 +1,18 @@
+#Base Image
+FROM ubuntu:16.04
+
+#onwer
+MAINTAINER nandha030<nandhavignesh2010@gmail.com>
+
+#Update Ubuntu
+RUN apt-get update
+
+# install apache2
+RUN  apt-get install apache2 -y
+
+# Copy the Code. 
+COPY info.html /var/www/html/
+
+# Excute the Service 
+CMD ["/usr/sbin/apache2ctl", "-D", "FOREGROUND"]
+
