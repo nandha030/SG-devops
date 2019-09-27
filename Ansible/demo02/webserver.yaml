@@ -1,0 +1,16 @@
+---
+
+- hosts: prod
+  become: yes
+  vars: 
+   doc_root: "/var/www/html/"
+  tasks: 
+  - name: Install Apache Packages
+    apt: name=apache2 state=present
+  
+  - name: Start Apache Service
+    service: name=apache2 state=started
+
+  - name: Deploy default Index file
+    copy: src=templates/test.txt dest=/var/www/html/info.html
+
