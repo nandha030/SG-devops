@@ -1,5 +1,7 @@
 node ('master') {
     
+notify('Started')
+
 stage('Git CheckOut') {    
 git url: 'https://github.com/nandha030/SG-devops.git'
 }
