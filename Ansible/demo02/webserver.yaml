@@ -14,3 +14,6 @@
   - name: Deploy default Index file
     copy: src=templates/test.txt dest=/var/www/html/info.html
 
+  - name: Deploy a template
+    template: src=templates/index1.html dest={{doc_root}}/info.html
+
